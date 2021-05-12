@@ -1,7 +1,7 @@
 import random
 import todas_as_funcoes
 iiii = 0
-print('Paciência Acordeão\n==================\nBem Vindo(a) ao jogo de Paciência Acordeão!\n)
+print("Bem Vindo(a) ao jogo de Paciência Acordeão!")
 b = input('')
 if b == '':
     aperta = True
@@ -18,26 +18,22 @@ while aperta == True:
             ind = lista_n[i]
             cart = baralho[i]
             print('{0}. {1}'.format(ind, cart))
-         a = input('Escolha uma carta (digite um número entre 1 e {}):)' .format(max(lista_n)))
+        a = input('Escolha uma carta (digite um número entre 1 e {}): '.format(max(lista_n)))
         while int(a) not in range(1, (max(lista_n)+1)):
-            a = input('Posição inválida. Digite um número entre 1 e {}, por favor): '.format(max(lista_n)))
+            a = input('Posição inválida. Digite um número entre 1 e {}): '.format(max(lista_n)))
         indice = int(a) - 1
-    l   ista_movimento = todas_as_funcoes.lista_movimentos_possiveis(baralho, indice)
+        lista_movimento = todas_as_funcoes.lista_movimentos_possiveis(baralho, indice)
         carta_selecionada = baralho[indice]
         while lista_movimento == []:
-            a = int(input('Movimento não pode ser realizado, insire um número e 1 a {}: '.format(max(lista_movimento))))
+            a = int(input('Movimento não pode ser realizado, insire um número de 1 a {}: '.format(max(lista_movimento))))
             if 0 <= a < max(lista_n):
                 break
             mover = todas_as_funcoes.possui_movimentos_possiveis(baralho)
             if mover == False:
                 iiii = 1
                 break
-            indice = int(a)-1
+            indice = int(a) - 1
             lista_movimento = todas_as_funcoes.lista_movimentos_possiveis(baralho, indice)
-        if iiii == 1:
-            break
-        indice = int(a)-1
-           lista_movimento = todas_as_funcoes.lista_movimentos_possiveis(baralho, indice)
         if iiii == 1:
             break
         if lista_movimento == [1]:
@@ -64,6 +60,6 @@ while aperta == True:
         repete = input('Gostaria de jogar novamente (s/n)? ')
         if repete == 's':
             aperta = True
-        else:
+        if repete != 'n':
             aperta = False
-        
+            
